@@ -79,7 +79,7 @@ This project is a practical demonstration of building a secure, scalable, and us
 
 ## Preview
 
-![PREVIEW](<./Secure-Money-Transfer-Web-Application//prevSnapShots/Screenshot%20(334).png>)
-![PREVIEW](<./Secure-Money-Transfer-Web-Application//prevSnapShots/Screenshot%20(335).png>)
-![PREVIEW](<./Secure-Money-Transfer-Web-Application//prevSnapShots/Screenshot%20(336).png>)
-![PREVIEW](<./Secure-Money-Transfer-Web-Application//prevSnapShots/Screenshot%20(337).png>)
+![PREVIEW](<./prevSnapShots/Screenshot (334).png>)
+![PREVIEW](<./prevSnapShots/Screenshot%20(335).png>)
+![PREVIEW](<./prevSnapShots/Screenshot%20(336).png>)
+![PREVIEW](<./prevSnapShots/Screenshot%20(337).png>)
