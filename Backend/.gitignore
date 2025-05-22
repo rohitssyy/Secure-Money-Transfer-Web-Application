@@ -1,0 +1,7 @@
+*.env
+*.env.example
+*.env.local
+*.env.staging
+
+
+node_modules
