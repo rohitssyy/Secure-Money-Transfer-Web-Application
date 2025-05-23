@@ -8,7 +8,7 @@ import { Inputpassword } from "../../components/inputpassword";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export function Signup() {
+export default function Signup() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
