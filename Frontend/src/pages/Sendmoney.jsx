@@ -7,6 +7,9 @@ export function Sendmoney() {
   const id = searchParams.get("id");
   const name = searchParams.get("name");
   const [amount, setAmount] = useState(0);
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // "success" | "error"
+
   console.log(id);
   console.log(name);
 
@@ -27,6 +30,20 @@ export function Sendmoney() {
                 </div>
                 <h3 className="text-2xl font-semibold">{name}</h3>
               </div>
+
+              {/* Response Message */}
+              {message && (
+                <div
+                  className={`mt-4 px-4 py-2 text-sm rounded-md ${
+                    messageType === "success"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {message}
+                </div>
+              )}
+
               <div className="space-y-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
@@ -44,18 +61,28 @@ export function Sendmoney() {
                   className="justify-center rounded-md text-sm font-medium ring-offset-background transition-colors h-10 px-4 py-2 w-full bg-green-500 text-white"
                   onClick={async () => {
                     const token = localStorage.getItem("token");
-                    await axios.post(
-                      "http://localhost:3001/api/account/transfer",
-                      {
-                        to: id,
-                        amount: amount,
-                      },
-                      {
-                        headers: {
-                          Authorization: `Bearer ${token}`,
+                    try {
+                      const res = await axios.post(
+                        "http://localhost:3001/api/account/transfer",
+                        {
+                          to: id,
+                          amount: amount,
                         },
-                      }
-                    );
+                        {
+                          headers: {
+                            Authorization: `Bearer ${token}`,
+                          },
+                        }
+                      );
+                      setMessage(res.data.message || "Transfer Successful");
+                      setMessageType("Success");
+                    } catch (err) {
+                      setMessage(
+                        err.response?.data?.message ||
+                          "Transfer failed. Please try again"
+                      );
+                      setMessageType("error");
+                    }
                   }}
                 >
                   Initiate Transfer
