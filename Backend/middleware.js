@@ -1,13 +1,17 @@
-const dotenv = require("dotenv")
-dotenv.config(); // Load variables from .env
-
-
-const  JWT_SECRET  = process.env.JWT_SECRET
 const jwt = require("jsonwebtoken")
+const dotenv = require("dotenv")
+dotenv.config(); 
+
+
+const JWT_SECRET  = process.env.JWT_SECRET
+console.log(JWT_SECRET)
+
 
 const authMiddleware = (req, res, next) => {
-    const authHeader = req.headers.authorization
 
+    
+    const authHeader = req.headers.authorization
+    console.log(authHeader)
 
     if (!authHeader || !authHeader.startsWith("Bearer")) {
         return res.status(403).json({ error: " Error something went wrong with headers/tokens" });

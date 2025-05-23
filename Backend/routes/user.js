@@ -5,7 +5,10 @@ const zod = require("zod")
 const { User, Account } = require("../database")
 
 const jwt = require("jsonwebtoken")
-const  JWT_SECRET  = process.env.JWT_SECRET
+const dotenv = require("dotenv")
+dotenv.config(); 
+const JWT_SECRET = process.env.JWT_SECRET
+console.log(JWT_SECRET)
 const { authMiddleware } = require("../middleware")
 
 
