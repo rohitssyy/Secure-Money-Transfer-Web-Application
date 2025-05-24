@@ -1,4 +1,4 @@
-import api from "../api";
+import api from "../src/api";
 import { ButtonC } from "./ButtonC";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
