@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AppBar } from "../../components/AppBar";
 import { Balance } from "../../components/Balance";
 import { Users } from "../../components/Users";
-import axios from "axios";
+import api from "../api";
 
 export default function Dashboard() {
   const [balance, setBalance] = useState(0);
@@ -10,8 +10,8 @@ export default function Dashboard() {
   useEffect(() => {
     async function funcAPI() {
       const token = localStorage.getItem("token");
-      const response = await axios.get(
-        "http://localhost:3001/api/account/balance",
+      const response = await api.get(
+        "/account/balance",
         {
           headers: {
             Authorization: `Bearer ${token}`,

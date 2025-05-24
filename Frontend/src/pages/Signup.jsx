@@ -6,7 +6,7 @@ import { Inputbox } from "../../components/Inputbox";
 import { Subeading } from "../../components/Subheading";
 import { Inputpassword } from "../../components/Inputpassword";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api";
 
 export default function Signup() {
   const [firstName, setFirstName] = useState("");
@@ -59,8 +59,8 @@ export default function Signup() {
             label={"Sign up"}
             onclick={async () => {
               try {
-                const response = await axios.post(
-                  "http://localhost:3001/api/signup",
+                const response = await api.post(
+                  "/signup",
                   {
                     username,
                     firstName,

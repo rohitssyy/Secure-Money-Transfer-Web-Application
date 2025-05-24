@@ -4,9 +4,11 @@ import { Subeading } from "../../components/Subheading";
 import { ButtonC } from "../../components/ButtonC";
 import { ButtonWarn } from "../../components/ButtonWarn";
 import { Inputpassword } from "../../components/Inputpassword";
-import axios from "axios";
 import { useState } from "react";
 import {  useNavigate } from "react-router-dom";
+import api from "../api";
+
+
 
 export default function Signin() {
     const navigate = useNavigate()
@@ -30,7 +32,7 @@ export default function Signin() {
             
                     <ButtonC label={"Sign In"}
                         onclick={async () => {
-                            const response = await axios.post("http://localhost:3001/api/signin", {
+                            const response = await api.post("/signin", {
                                 username,
                                 password
                             })

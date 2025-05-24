@@ -1,6 +1,7 @@
-import axios from "axios";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import api from "../api";
+
 
 export default function Sendmoney() {
   const [searchParams] = useSearchParams();
@@ -62,8 +63,8 @@ export default function Sendmoney() {
                   onClick={async () => {
                     const token = localStorage.getItem("token");
                     try {
-                      const res = await axios.post(
-                        "http://localhost:3001/api/account/transfer",
+                      const res = await api.post(
+                        "/account/transfer",
                         {
                           to: id,
                           amount: amount,
