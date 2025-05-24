@@ -4,7 +4,10 @@ const cors = require("cors");
 const userRouter = require("./routes/user")
 const accountRouter = require("./routes/account");
 
-const allowedOrigins = ["http://localhost:5173/" , "https://secure-money-transfer-web-application.vercel.app/" , "https://secure-money-transfer-web-application-55vin1866.vercel.app/" , "https://secure-money-transfer-web-a-git-d40487-rohits-projects-faa774b9.vercel.app/"]
+const allowedOrigins = ["http://localhost:5173/",
+  "https://secure-money-transfer-web-application.vercel.app",
+  "https://secure-money-transfer-web-application-55vin1866.vercel.app",
+  "https://secure-money-transfer-web-a-git-d40487-rohits-projects-faa774b9.vercel.app"]
 
 
 app.use(cors({
