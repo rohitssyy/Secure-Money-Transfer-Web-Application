@@ -119,32 +119,32 @@ router.post("/signin", async (req, res) => {
 })
 
 
-    const updateBody = zod.object({
-           password: zod.string().optional(),
-           firstName: zod.string().optional(),
-           lastName: zod.string().optional()
-      })
+//     const updateBody = zod.object({
+//            password: zod.string().optional(),
+//            firstName: zod.string().optional(),
+//            lastName: zod.string().optional()
+//       })
 
 
 
-router.put("/", authMiddleware, async (req, res) => { 
-    const { success } = updateBody.safeParse(req.body)
+// router.put("/", authMiddleware, async (req, res) => { 
+//     const { success } = updateBody.safeParse(req.body)
 
-    if (!success) {
-        res.status(411).json({
-            message:"error while updating information"
-        })
-    }
+//     if (!success) {
+//         res.status(411).json({
+//             message:"error while updating information"
+//         })
+//     }
 
-    await User.updateOne(req.body, {
-        id: req.userId
-    });
+//     await User.updateOne(req.body, {
+//         id: req.userId
+//     });
     
-    res.json({
-        message: "updated Successfully"
-    })
+//     res.json({
+//         message: "updated Successfully"
+//     })
 
-})
+// })
 
 
 router.get("/bulk", async (req, res) => {

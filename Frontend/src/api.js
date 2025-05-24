@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 // Use environment variable (recommended)
 const BASE_URL = import.meta.env.VITE_API_URL;
 
