@@ -3,8 +3,8 @@ import { ButtonC } from "../../components/ButtonC";
 import { ButtonWarn } from "../../components/ButtonWarn";
 import { Heading } from "../../components/Heading";
 import { Inputbox } from "../../components/Inputbox";
-import { Subeading } from "../../components/subheading";
-import { Inputpassword } from "../../components/inputpassword";
+import { Subeading } from "../../components/Subheading";
+import { Inputpassword } from "../../components/Inputpassword";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
